@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+
+    <style>
+        p1{
+            background-color: rgb(0, 255, 0);
+        }
+        p2{
+            background-color: rgb(255, 0, 0);
+            color:white;
+        }
+        #positivo{
+            max-width:400px;
+            max-height:350px;
+            width: auto;
+            height: auto;
+        }
+        #negativo{
+            max-width:400px;
+            max-height:350px;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    Onde você nasceu: <input type="text" name="txtpaise" id="txtpais">
+    <input type="button" value="Enviar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+
+    <script>
+
+        function calcular(){
+
+            var txtp = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+            var pais = String(txtp.value)
+            
+            res.innerHTML = `<p> Se você nasceu em: ${pais}</p>`
+
+            if(pais == 'Brasil'){
+                res.innerHTML += `<p1>você é brasileiro</p1><br>`
+                res.innerHTML += `<img id="positivo" src="positive.jpg" alt="infinitos creditos sociais">`
+            }else{
+                res.innerHTML += `<p2>você é estrangeiro</p2> <br>`
+                res.innerHTML += `<img id="negativo" src="negative.jpg" alt="negativoss creditos sociais">`
+            }
+        }
+    </script>
+</body>
+</html>

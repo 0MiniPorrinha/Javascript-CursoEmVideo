@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"></div>-->
+    <div id="area">
+        Interaja...
+    </div>
+    <script>
+        /*
+        var a = window.document.getElementById('area')
+        Guanabara colocou a variavel fora da funcao mas é ruim para o escopo
+        */
+
+        /*function clicar(){
+            var a = window.document.getElementById('area')
+            a.innerText = 'Clicou'
+            a.style.background = "blue"
+        }
+        function entrar(){
+            var e = window.document.getElementById('area')
+            e.innerText = 'Entrou'
+            e.style.background = "green"
+        }
+        function sair(){
+            var s = window.document.getElementById('area')
+            s.innerText = 'Saiu'
+            s.style.background = "red"
+        }*/
+
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+            a.innerText = 'Clicou'
+            a.style.background = "blue"
+        }
+        function entrar(){
+            a.innerText = 'Entrou'
+            a.style.background = "green"
+        }
+        function sair(){
+            a.innerText = 'Saiu'
+            a.style.background = "red"
+        }
+    </script>
+</body>
+</html>
